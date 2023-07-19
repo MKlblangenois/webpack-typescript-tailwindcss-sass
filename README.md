@@ -13,7 +13,7 @@ Make sure you have the following prerequisites installed on your machine:
 1. Clone the repository:
 
 ```shell
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/MKlblangenois/webpack-typescript-tailwindcss-sass/tree/main
 ```
 
 2. Install the dependencies:
