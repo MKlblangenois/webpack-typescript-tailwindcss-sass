@@ -3,6 +3,9 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"author": "Logan Blangenois <logan.blangenois@mediakod.com>",
+	"contributors": [
+		"Thomas Hellin <thomas.hellin@mediakod.com>"
+	],
 	"license": "MIT",
 	"devDependencies": {
 		"@webpack-cli/generators": "^3.0.7",
