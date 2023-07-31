@@ -3,6 +3,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -51,7 +52,28 @@ const config = {
 	},
 	optimization: {
 		minimize: true,
-		minimizer: [new CssMinimizerPlugin()],
+		minimizer: [
+			new CssMinimizerPlugin(),
+			new TerserPlugin({
+				terserOptions: {
+					format: {
+						comments: false,
+					},
+				},
+				extractComments: false,
+				minify: (file, sourceMap) => {
+					const uglifyJsOptions = {};
+
+					if (sourceMap) {
+						uglifyJsOptions.sourceMap = {
+							content: sourceMap,
+						};
+					}
+
+					return require("uglify-js").minify(file, uglifyJsOptions);
+				},
+			}),
+		],
 	},
 };
 

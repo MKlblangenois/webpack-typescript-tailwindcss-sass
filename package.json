@@ -21,8 +21,10 @@
 		"sass-loader": "^13.3.2",
 		"style-loader": "^3.3.3",
 		"tailwindcss": "^3.3.3",
+		"terser-webpack-plugin": "^5.3.9",
 		"ts-loader": "^9.4.4",
 		"typescript": "^5.1.6",
+		"uglify-js": "^3.17.4",
 		"webpack": "^5.88.2",
 		"webpack-cli": "^5.1.4"
 	},
